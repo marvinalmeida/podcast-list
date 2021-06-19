@@ -1,9 +1,10 @@
 import React from 'react'
+import Player from './components/Player/Player'
 
 function App() {
   return (
     <div>
-      <h1>app js</h1>
+      <Player/>
     </div>
   );
 }
