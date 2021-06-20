@@ -1,5 +1,5 @@
 import React from "react";
-import { Wrapper } from "./ProgressBar.styled";
+import { Wrapper } from "./ProgressBar.styles";
 
 const ProgressBar = () => {
   return (

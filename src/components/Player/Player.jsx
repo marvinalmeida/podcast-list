@@ -1,5 +1,5 @@
 import React from "react";
-import { Wrapper } from "./Player.styled";
+import { Wrapper } from "./Player.styles";
 import ProgressBar from "../ProgressBar/ProgressBar";
 
 const Player = () => {
