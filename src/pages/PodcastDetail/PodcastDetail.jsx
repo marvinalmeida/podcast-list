@@ -13,6 +13,10 @@ const PodeCastDetail = () => {
     setPodcast(getPodcastById(podcastId));
   }, [params.id]);
 
+  useEffect(() => {
+    document.title = podcast.name;
+  }, [podcast]);
+
   return (
     <Layout>
       <PodcastDetail podcast={podcast} />
