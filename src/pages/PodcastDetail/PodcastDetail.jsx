@@ -8,9 +8,13 @@ const PodCastDetailPage = () => {
   const [podcast, setPodcast] = useState({});
 
   const params = useParams();
+
   useEffect(() => {
     const podcastId = Number(params.id);
-    setPodcast(getPodcastById(podcastId));
+
+    getPodcastById(podcastId)
+      .then((response) => setPodcast(response.data))
+      .catch((e) => console.error(e));
   }, [params.id]);
 
   useEffect(() => {
