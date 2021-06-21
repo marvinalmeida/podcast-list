@@ -1,53 +1,46 @@
 import React from "react";
 import { Wrapper } from "./PodcastList.styles";
-import podcastMock from "../../mocks/podcast.json";
+import { Link } from "react-router-dom";
+import ExpandText from "../../components/ExpandText/ExpandText";
 
-const PodcastList = () => {
+const PodcastList = ({ podcasts }) => {
+  const isMobile = window.innerWidth < 768;
+
   return (
     <Wrapper>
       <div className="img-initial">
-        <div style={{ position: "relative" }}>
-          <img src="./assets/images/image1.png" alt="" />
-          <div className="title-epsodes">
-            <span>podlogic</span>
-            <small>6 epsodios</small>
-          </div>
+        <div className="title-epsodes">
+          <span>{podcasts.name}</span>
+          <small>{podcasts.episodes?.length} episódios</small>
         </div>
       </div>
+      <div className="podcast-list">
+        {!isMobile && (
+          <>
+            <h4 className="podcast-list__title">Sobre o Podcast</h4>
+            <ExpandText description={podcasts.description} />
+          </>
+        )}
+        <h4 className="podcast-list__title">lista de epsódios</h4>
+        {podcasts.episodes?.map((episode) => (
+          <div key={episode.id} className="podcast-list__episode">
+            <div className="podcast-list__episode__image">
+              <img src={episode.cover} alt={episode.name} />
+            </div>
 
-      <div>
-        <div className="epsodes-description">
-          <h4>lista de epsódios</h4>
-        </div>
-        <div className="epsodes-description">
-          <div className="image-ep">
-            <img src="./assets/images/image2.png" alt="" />
+            <div className="podcast-list__episode__item">
+              <Link
+                className="podcast-list__episode__name"
+                to={`/podcast/${episode.id}`}
+              >
+                {episode.name}
+              </Link>
+              <span className="podcast-list__episode__time">
+                {episode.duration}
+              </span>
+            </div>
           </div>
-          <div className="text-ep">
-            <span>
-              episódio 1 - cuidando das finanças pessoais com Sarah Gonçalves
-            </span>
-            <span className="time">45:00</span>
-          </div>
-        </div>
-        <div className="epsodes-description">
-          <div className="image-ep">
-            <img src="./assets/images/image3.png" alt="" />
-          </div>
-          <div className="text-ep">
-            <span>episódio 2 - produtividade no homeoffice</span>
-            <span className="time">45:00</span>
-          </div>
-        </div>
-        <div className="epsodes-description">
-          <div className="image-ep">
-            <img src="./assets/images/image4.png" alt="" />
-          </div>
-          <div className="text-ep">
-            <span>episódio 3 - inteligência artificial nas nossas casas</span>
-            <span className="time">45:00</span>
-          </div>
-        </div>
+        ))}
       </div>
     </Wrapper>
   );

@@ -1,0 +1,14 @@
+{
+  "id": 365,
+  "name": "Cuidando das finan\u00e7as pessoais com Sarah Gon\u00e7alves",
+  "description": "A nossa situa\u00e7\u00e3o financeira impacta todas as \u00e1reas da nossa vida. Por isso, \u00e9 essencial organizar nossas finan\u00e7as pessoais. N\u00e3o possuir um planejamento financeiro pode causar diversos problemas para sua vida pessoal. Isso porque, quem n\u00e3o possui controle sobre o pr\u00f3prio dinheiro pode acabar se enrolando em d\u00edvidas e juros; gastando mais do que o necess\u00e1rio e do que se deve; e, claro, piorando sua situa\u00e7\u00e3o cada vez mais, podendo at\u00e9 arruinar as suas finan\u00e7as completamente. Saiba como evitar esses problemas com as dicas da Sarah Gon\u00e7alves, nossa primeira entrevistada.",
+  "duration": 1258,
+  "participants": [
+    "Sarah Gon\u00e7alves",
+    "Guilherme Engler",
+    "Caio Figueiredo"
+  ],
+  "episodeNumber": 1,
+  "cover": "https://api-frontend-test.brlogic.com/podcast/episodes/365/cover.jpeg",
+  "audio": "https://api-frontend-test.brlogic.com/podcast/episodes/365/audio.mp3"
+}
