@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import parseSecondsToMinute from "../helpers/parseSecondsToMinute";
 
 const useAudio = (url) => {
-  // mp3 example working: "http://onewebhosting.com/mp3player/sample-file.mp3";
-
   const [audio] = useState(new Audio(url));
 
   const [playing, setPlaying] = useState(false);
