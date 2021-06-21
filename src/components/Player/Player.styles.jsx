@@ -1,17 +1,33 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background-color: #27657f;
   width: 100%;
-  height: 126px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
   .control {
     display: flex;
     align-items: center;
+    margin-top: 16px;
+
+    @media (min-width: 768px) {
+      margin-left: 24px;
+      margin-top: 0;
+    }
+
+    img {
+      transition: 0.4s;
+    }
+
+    img:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
     .icon-play {
       margin: 0 16px;
     }

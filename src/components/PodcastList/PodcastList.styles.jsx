@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
     background-size: cover;
     @media (max-width: 768px) {
       width: 100%;
-      height: 331px;
+      min-height: 331px;
       background-position-x: 0;
       border-radius: 0;
     }
@@ -51,48 +51,55 @@ export const Wrapper = styled.div`
   }
 
   .podcast-list {
-    background-color: #27657f;
+    background-color: ${(props) => props.theme.secondary};
     width: 453px;
     border-radius: 0 8px 8px 0;
     padding: 24px;
-    overflow-y: scroll;
+
     @media (max-width: 768px) {
       width: 100%;
       height: auto;
       overflow-y: visible;
     }
+
     &__title {
       text-transform: uppercase;
       font-size: 8px;
       color: #8aa3ad;
       letter-spacing: 0.46em;
     }
-    &__episode {
-      margin: 12px 0;
-      display: flex;
-      &__image {
-        min-width: 70px;
-        width: 70px;
-        img {
-          width: 100%;
+    .episodes {
+      @media (min-width: 768px) {
+        overflow-y: scroll;
+        height: 180px;
+      }
+      &__episode {
+        margin: 12px 0;
+        display: flex;
+        &__image {
+          min-width: 70px;
+          width: 70px;
+          img {
+            width: 100%;
+          }
         }
-      }
-      &__item {
-        margin: 0 9px;
-      }
-      &__name {
-        font-weight: bold;
-        font-size: 14px;
-        color: white;
-        display: block;
-        &:hover {
-          opacity: 0.7;
+        &__container-infos {
+          margin: 0 9px;
         }
-      }
-      &__time {
-        font-size: 12px;
-        color: #8aa3ad;
-        margin: 4px 0;
+        &__name {
+          font-weight: bold;
+          font-size: 14px;
+          color: white;
+          display: block;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+        &__time {
+          font-size: 12px;
+          color: #8aa3ad;
+          margin: 4px 0;
+        }
       }
     }
   }

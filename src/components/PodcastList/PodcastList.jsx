@@ -22,25 +22,27 @@ const PodcastList = ({ podcasts }) => {
           </>
         )}
         <h4 className="podcast-list__title">lista de epsódios</h4>
-        {podcasts.episodes?.map((episode) => (
-          <div key={episode.id} className="podcast-list__episode">
-            <div className="podcast-list__episode__image">
-              <img src={episode.cover} alt={episode.name} />
-            </div>
+        <div className="episodes">
+          {podcasts.episodes?.map((episode) => (
+            <div key={episode.id} className="episodes__episode">
+              <div className="episodes__episode__image">
+                <img src={episode.cover} alt={episode.name} />
+              </div>
 
-            <div className="podcast-list__episode__item">
-              <Link
-                className="podcast-list__episode__name"
-                to={`/podcast/${episode.id}`}
-              >
-                {episode.name}
-              </Link>
-              <span className="podcast-list__episode__time">
-                {episode.duration}
-              </span>
+              <div className="episodes__episode__container-infos">
+                <Link
+                  className="episodes__episode__name"
+                  to={`/podcast/${episode.id}`}
+                >
+                  {episode.name}
+                </Link>
+                <span className="episodes__episode__time">
+                  {episode.duration}
+                </span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </Wrapper>
   );
