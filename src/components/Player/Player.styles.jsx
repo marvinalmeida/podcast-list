@@ -30,6 +30,14 @@ export const Wrapper = styled.div`
 
     .icon-play {
       margin: 0 16px;
+      min-width: 60px;
+      display: flex;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
     }
   }
 `;
