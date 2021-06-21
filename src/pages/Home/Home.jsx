@@ -7,7 +7,9 @@ const Home = () => {
   const [podcastList, setPodcastList] = useState([]);
 
   useEffect(() => {
-    setPodcastList(getAllPodcasts());
+    getAllPodcasts()
+      .then((response) => setPodcastList(response.data))
+      .catch((e) => console.error(e));
   }, []);
 
   return (

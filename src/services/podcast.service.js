@@ -1,7 +1,7 @@
-import podcastListMock from "../mocks/podcast-list.json";
-import podcastDetailMock from "../mocks/podcast-detail.json";
+import api from "./api";
 
-export const getAllPodcasts = () => podcastListMock;
+export const getAllPodcasts = () =>
+  api.get("/podcast/details.json?cache=clean");
 
 export const getPodcastById = (id) =>
-  podcastDetailMock.id === id ? podcastDetailMock : {};
+  api.get(`/podcast/episodes/${id}/details.json?cache=clean`);
