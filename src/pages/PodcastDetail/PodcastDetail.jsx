@@ -4,10 +4,10 @@ import Layout from "../../components/Layout/Layout";
 import PodcastDetail from "../../components/PodcastDetail/PodcastDetail";
 import { getPodcastById } from "../../services/podcast.service";
 
-const PodeCastDetail = () => {
+const PodCastDetailPage = () => {
   const [podcast, setPodcast] = useState({});
-  const params = useParams();
 
+  const params = useParams();
   useEffect(() => {
     const podcastId = Number(params.id);
     setPodcast(getPodcastById(podcastId));
@@ -23,4 +23,4 @@ const PodeCastDetail = () => {
     </Layout>
   );
 };
-export default PodeCastDetail;
+export default PodCastDetailPage;
